@@ -165,3 +165,7 @@ chrome.alarms.onAlarm.addListener((alarm) => {
     removeRuleIds: [ruleId]
   });
 });
+
+chrome.action.onClicked.addListener(() => {
+  chrome.runtime.openOptionsPage();
+});
