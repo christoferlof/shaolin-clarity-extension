@@ -18,7 +18,21 @@ async function loadBlockedUrl() {
   return response?.url ?? null;
 }
 
+function applyDayPhase() {
+  const hour = new Date().getHours();
+  let phase = "day";
+  if (hour >= 5 && hour < 11) phase = "morning";
+  else if (hour >= 11 && hour < 17) phase = "day";
+  else if (hour >= 17 && hour < 20) phase = "sunset";
+  else phase = "night";
+
+  document.body.classList.remove("phase-morning", "phase-day", "phase-sunset", "phase-night");
+  document.body.classList.add(`phase-${phase}`);
+}
+
 (async () => {
+  applyDayPhase();
+
   const url = await loadBlockedUrl();
   if (url) blockedUrlEl.textContent = url;
 

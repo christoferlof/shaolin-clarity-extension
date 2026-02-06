@@ -1,7 +1,11 @@
 :root {
-  --ink: #1b1f23;
-  --accent: #7b3f00;
-  --paper: #f6efe2;
+  --ink: #2b3427;
+  --accent: #c26a28;
+  --paper: #f6f0e6;
+  --mist: #e7efe8;
+  --pine: #4b6b4f;
+  --sage: #8aa77f;
+  --sky: #f3ecd7;
 }
 
 * { box-sizing: border-box; }
@@ -12,33 +16,58 @@ body {
   display: grid;
   place-items: center;
   font-family: "Georgia", "Times New Roman", serif;
-  background: radial-gradient(circle at top, #fff9ef 0%, #f3e7d2 70%, #eadcc5 100%);
   color: var(--ink);
 }
 
-.card {
-  width: min(640px, 90vw);
-  padding: 40px;
-  border: 1px solid #d3c6b4;
-  background: var(--paper);
-  box-shadow: 0 30px 60px rgba(18, 18, 18, 0.12);
+.phase-morning {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(255, 233, 200, 0.9) 0%, rgba(245, 221, 190, 0.7) 45%, rgba(230, 210, 192, 0.9) 100%),
+    linear-gradient(180deg, #f7e6cc 0%, #f0e7d8 55%, #e6efe8 100%);
+}
+
+.phase-day {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.88) 0%, rgba(231, 239, 232, 0.72) 42%, rgba(210, 224, 214, 0.9) 100%),
+    linear-gradient(180deg, var(--sky) 0%, #e8f0e7 50%, var(--mist) 100%);
+}
+
+.phase-sunset {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255, 214, 176, 0.9) 0%, rgba(243, 198, 160, 0.75) 45%, rgba(226, 187, 170, 0.9) 100%),
+    linear-gradient(180deg, #f4d3b0 0%, #f0d0bf 55%, #e5e0d8 100%);
+}
+
+.phase-night {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(180, 198, 214, 0.45) 0%, rgba(140, 160, 178, 0.35) 45%, rgba(90, 112, 130, 0.5) 100%),
+    linear-gradient(180deg, #c9d6e1 0%, #aebed0 55%, #8aa0b2 100%);
+  color: #24313a;
+}
+
+.wrap {
+  width: min(720px, 92vw);
+  padding: 24px;
   text-align: center;
 }
 
+
 h1 {
-  font-size: 48px;
-  margin: 0 0 8px;
+  font-size: 44px;
+  margin: 0 0 10px;
+  color: #2a362c;
+  text-shadow: 0 2px 12px rgba(20, 28, 22, 0.08);
 }
 
 .prompt {
-  margin: 0 0 16px;
+  margin: 0 0 18px;
   font-size: 18px;
+  color: #4b5f4d;
 }
 
 .url {
   font-size: 14px;
-  color: #6f6356;
-  margin-bottom: 24px;
+  color: #6b7c6c;
+  margin-bottom: 26px;
   word-break: break-all;
 }
 
@@ -50,18 +79,42 @@ h1 {
 }
 
 button {
-  border: none;
-  padding: 12px 18px;
+  border: 1px solid rgba(33, 41, 32, 0.12);
+  padding: 12px 20px;
   font-size: 15px;
   cursor: pointer;
-}
-
-#continue {
-  background: var(--accent);
-  color: white;
+  font-family: inherit;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
 }
 
 #close {
-  background: #e1d6c6;
+  background: linear-gradient(180deg, #d0792f 0%, #b46226 100%);
+  color: white;
+  box-shadow: 0 10px 20px rgba(194, 106, 40, 0.28);
+}
+
+#continue,
+.secondary {
+  background: rgba(237, 242, 235, 0.8);
   color: var(--ink);
+  border: 1px solid rgba(208, 217, 204, 0.8);
+}
+
+.phase-night h1 {
+  color: #1f2a33;
+}
+
+.phase-night .prompt {
+  color: #3a4a57;
+}
+
+.phase-night .url {
+  color: #5a6b78;
+}
+
+.phase-night #continue,
+.phase-night .secondary {
+  background: rgba(220, 228, 235, 0.8);
+  border-color: rgba(180, 192, 204, 0.8);
 }
