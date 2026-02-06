@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shaolin Clarity Options</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>Shaolin Clarity</h1>
+      <p class="sub">List sites that should trigger a pause. One domain per line.</p>
+
+      <textarea id="sites" spellcheck="false" placeholder="news.ycombinator.com\nreddit.com\nnytimes.com"></textarea>
+
+      <div class="actions">
+        <button id="save">Save list</button>
+        <span id="status" role="status"></span>
+      </div>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>
