@@ -1,4 +1,4 @@
-# shaolin-clarity-extenion
+# Shaolin clarity
 
 A personal Chrome extension that redirects distracting sites to a mindful pause.
 
