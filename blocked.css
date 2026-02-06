@@ -47,7 +47,7 @@ body {
 .wrap {
   width: min(720px, 92vw);
   padding: 24px;
-  text-align: center;
+  text-align: left;
 }
 
 
