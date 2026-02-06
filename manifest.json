@@ -44,9 +44,7 @@
       "resources": [
         "blocked.html",
         "blocked.css",
-        "blocked.js",
-        "assets/temple.svg",
-        "assets/shaolin_temple_gemini.png"
+        "blocked.js"
       ],
       "matches": [
         "<all_urls>"
